@@ -1,13 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	prices := []int{345, 1, 345, 456, 456, 7687, 32, 2, 90, 4, 3, 76, 2, 8, 6, 4, 9}
-	//prices := []int{1, 3, 2, 8, 4, 9}
-	maxProfit(prices, 2)
+	//prices := []int{345, 1, 345, 456, 456, 7687, 32, 2, 90, 4, 3, 76, 2, 8, 6, 4, 9}
+	prices := []int{1, 3, 2, 8, 4, 9}
+	result := maxProfit(prices, 2)
+	fmt.Printf("利润: %d \n", result)
 }
 func maxProfit(prices []int, fee int) int {
 	result := make([]int, 0)
@@ -43,8 +42,13 @@ func maxProfit(prices []int, fee int) int {
 			result = append(result, prices[maiChuKey])
 		}
 	}
-	for _, value := range result {
+
+	profits := 0
+	for key, value := range result {
 		fmt.Printf(": %d \n", value)
+		if key%2 > 0 {
+			profits += value - result[key-1] - 2
+		}
 	}
-	return 0
+	return profits
 }
