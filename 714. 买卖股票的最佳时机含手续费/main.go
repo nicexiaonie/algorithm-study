@@ -15,7 +15,7 @@ func maxProfit(prices []int, fee int) int {
 		price := prices[key]
 		if is {
 			for i := key + 1; i < len(prices); i++ {
-				if prices[i]-2 > price {
+				if prices[i]-fee > price {
 
 					nextPrice := 0
 					if key < len(prices)-1 {
@@ -32,7 +32,7 @@ func maxProfit(prices []int, fee int) int {
 		} else {
 			maiChuKey := key
 			for i := key + 1; i < len(prices); i++ {
-				if prices[i]-2 > prices[maiChuKey] {
+				if prices[i]-fee > prices[maiChuKey] {
 					maiChuKey = i
 					continue
 				}
