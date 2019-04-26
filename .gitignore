@@ -1,1 +1,46 @@
 /.idea/
+
+
+
+
+11, 13, 4, 16, 2, 5, 12, 47, 9, 4
+
+
+第一轮
+  1、
+    key = 0     left = 0    right = 9
+    <-     比11小的    4  right=9
+    交换位置    arr[left] = 4
+    ->     比11大的    13
+    arr[right] = 13   left = 1
+    arr[left] = 基准数 11
+    key = 1     left = 1    right = 8
+
+    4, 11, 4, 16, 2, 5, 12 47, 9, 13
+
+  2、
+    key = 1     left = 1    right = 8
+    右->左   小于11的9  right = 8
+    交换位置   arr[left] = 9  left = 1
+    左到右    大于11的16  left = 3
+    arr[right] = 16
+    arr[left] = 11
+    4, 9, 4, 11, 2, 5, 12, 47, 16 13
+
+  3、
+    key = 3     left = 3    right = 8
+    右->左   小于11的5   right=6
+    arr[left] = 5   left=3
+    左到右    大于11的 没  left=6
+    arr[right] = 11
+    交换位置
+    4, 9, 4, 5, 2, 11, 12, 47, 16, 13
+
+  key = 5
+
+
+
+
+
+
+
